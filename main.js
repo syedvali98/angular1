@@ -1,7 +1,7 @@
 //starting of class
 var video = /** @class */ (function () {
     //start constructor
-    function video(title, views, likes, dislikes, channelName, subscribers, description, numberOfComments, relatedVideos) {
+    function video(title, videoUrl, views, likes, dislikes, channelName, subscribers, description, numberOfComments, relatedVideos) {
         var _this = this;
         //methods
         //use this to get all details 
@@ -11,6 +11,9 @@ var video = /** @class */ (function () {
         // use whatever you need by the below methods
         this.getVideoTitle = function () {
             return _this.title;
+        };
+        this.getVideoUrl = function () {
+            return _this.videoUrl;
         };
         this.getVideoViews = function () {
             return _this.views;
@@ -37,6 +40,7 @@ var video = /** @class */ (function () {
             return _this.relatedVideos;
         };
         this.title = title;
+        this.videoUrl = videoUrl;
         this.views = views;
         this.likes = likes;
         this.dislikes = dislikes;
@@ -48,6 +52,6 @@ var video = /** @class */ (function () {
     } //end constructor
     return video;
 }()); //end of the class
-var getDetails = new video(" Hello ", 586, 56, 2, " The killer ", 540, " hello friends ", 21, ["heybabay", "Hellomoto", "Bachkerehna"]);
+var getDetails = new video(" Hello ", "https://www.youtube.com/watch?v=CrLPOof7nfc", 586, 56, 2, " The killer ", 540, " hello friends ", 21, ["heybabay", "Hellomoto", "Bachkerehna"]);
 var completeVideoDetails = getDetails.getCompleteDetails();
 console.log(completeVideoDetails);

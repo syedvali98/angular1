@@ -2,6 +2,7 @@
 class video {
 
     title : string;
+    videoUrl : any;
     views : number;
     likes : number;
     dislikes : number;
@@ -12,9 +13,10 @@ class video {
     relatedVideos : string[];
 
     //start constructor
-    constructor (title : string,views : number,likes : number,dislikes : number,channelName : string,subscribers : number,description : string,numberOfComments : number,relatedVideos : string[]){
+    constructor (title : string,videoUrl : any,views : number,likes : number,dislikes : number,channelName : string,subscribers : number,description : string,numberOfComments : number,relatedVideos : string[]){
 
         this.title = title;
+        this.videoUrl = videoUrl;
         this.views = views;
         this.likes = likes;
         this.dislikes = dislikes;
@@ -33,6 +35,9 @@ class video {
     // use whatever you need by the below methods
     getVideoTitle = ()=>{
         return this.title;
+    }
+    getVideoUrl = ()=>{
+        return this.videoUrl;
     }
     getVideoViews =()=>{
         return this.views;
@@ -60,6 +65,6 @@ class video {
     }
 }//end of the class
 
-let getDetails = new video(" Hello ",586,56,2," The killer ",540," hello friends ",21,["heybabay","Hellomoto", "Bachkerehna"]);
+let getDetails = new video(" Hello ","https://www.youtube.com/watch?v=CrLPOof7nfc",586,56,2," The killer ",540," hello friends ",21,["heybabay","Hellomoto", "Bachkerehna"]);
 let completeVideoDetails = getDetails.getCompleteDetails();
 console.log(completeVideoDetails);
